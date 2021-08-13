@@ -16,7 +16,8 @@ ___INFO___
   "displayName": "Recite Me Toolbar",
   "brand": {
     "id": "brand_dummy",
-    "displayName": ""
+    "displayName": "",
+    "categories": ["UTILITY"]
   },
   "description": "Adds the Recite Me Toolbar loading code onto your site.",
   "containerContexts": [

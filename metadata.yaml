@@ -1,19 +1,5 @@
-# Copyright 2019 Google LLC
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     https://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-# TODO: documention link if exist add it after homepage => documentation: "https://reciteme.com/user-guide"
-# TODO: be sure latest templatetpl commit sha updated.
-homepage: "https://reciteme.com/"
+homepage: "https://reciteme.com"
+documentation: "https://reciteme.com"
 versions:
-  - sha: 5f37b8e5fd4121782b9d7a277c69bd1085f01b8e
-    changeNotes: Initial Version
+  - sha: 50bff53fda67c0ecd2f258bd8e2e15c13936e4ae
+    changeNotes: Initial Release
