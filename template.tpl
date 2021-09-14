@@ -67,9 +67,15 @@ const setInWindow = require('setInWindow');
 const scriptUrl = 'https://reciteme.com/gtm-script.js';
 const JSON = require('JSON');
 
-if (!queryPermission('access_globals', 'serviceKey') || !queryPermission('access_globals', 'options')) {
-  log(tagName + ' failed to load due to insufficient permissions.');
+if (!queryPermission('access_globals', 'readwrite', 'serviceKey')) {
+  log(tagName + ' failed to load due to insufficient permissions for serviceKey.');
   data.gtmOnFailure();
+  return;
+}
+if (!queryPermission('access_globals', 'readwrite', 'options')) {
+  log(tagName + ' failed to load due to insufficient permissions for options.');
+  data.gtmOnFailure();
+  return;
 }
 setInWindow('serviceKey', data.clientKey, true);
 setInWindow('options', JSON.parse(data.optionsJson), true);
@@ -268,4 +274,4 @@ scenarios:
 
 ___NOTES___
 
-Created on 13/09/2021, 14:15:49
+Created on 14/09/2021, 13:39:12
