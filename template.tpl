@@ -56,6 +56,10 @@ if (!data.clientKey) {
   data.gtmOnFailure();
   return;
 }
+if (!data.optionsJson) {
+  data.gtmOnFailure();
+  return;
+}
 
 const queryPermission = require('queryPermission');
 const injectScript = require('injectScript');
@@ -212,7 +216,7 @@ ___WEB_PERMISSIONS___
                 "mapValue": [
                   {
                     "type": 1,
-                    "string": "optionsJson"
+                    "string": "options"
                   },
                   {
                     "type": 8,
