@@ -64,7 +64,7 @@ if (!data.optionsJson) {
 const queryPermission = require('queryPermission');
 const injectScript = require('injectScript');
 const setInWindow = require('setInWindow');
-const scriptUrl = 'https://reciteme.com/gtm-script.js';
+const scriptUrl = 'https://gtm.reciteme.com/gtm-script.js';
 const JSON = require('JSON');
 
 if (!queryPermission('access_globals', 'readwrite', 'serviceKey')) {
@@ -136,7 +136,7 @@ ___WEB_PERMISSIONS___
             "listItem": [
               {
                 "type": 1,
-                "string": "https://reciteme.com/gtm-script.js"
+                "string": "https://gtm.reciteme.com/gtm-script.js"
               }
             ]
           }
