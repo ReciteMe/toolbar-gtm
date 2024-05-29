@@ -1,4 +1,2 @@
-# ReciteMe-TagMan
-GogoleTag-Manager Plugin for ReciteMe
-
-# reciteme-tagmanager
+# Recite Me Tag Manager
+Google Tag Manager Plugin for ReciteMe.
