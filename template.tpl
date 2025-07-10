@@ -44,6 +44,20 @@ ___TEMPLATE_PARAMETERS___
     "simpleValueType": true,
     "defaultValue": "{}",
     "help": "Enter any custom options that you are sen into this field, if none have been provided, leave this as the default value."
+  },
+  {
+    "type": "select",
+    "name": "region",
+    "displayName": "Region",
+    "defaultValue": "UK",
+    "simpleValueType": true,
+    "selectItems": [
+        { "value": "UK", "displayValue": "UK" },
+        { "value": "US", "displayValue": "US" },
+        { "value": "AU", "displayValue": "AU" }
+      ],
+    "help": "Select the region for ReciteMe configuration."
+
   }
 ]
 
@@ -60,7 +74,10 @@ if (!data.optionsJson) {
   data.gtmOnFailure();
   return;
 }
-
+if (!data.region) {
+  data.gtmOnFailure();
+  return;
+}
 const queryPermission = require('queryPermission');
 const injectScript = require('injectScript');
 const setInWindow = require('setInWindow');
@@ -79,6 +96,19 @@ if (!queryPermission('access_globals', 'readwrite', 'options')) {
 }
 setInWindow('serviceKey', data.clientKey, true);
 setInWindow('options', JSON.parse(data.optionsJson), true);
+
+let reciteScriptDomain = "api.reciteme.com";
+const region = data.region;
+if (region === "AU") {
+  reciteScriptDomain = "au-api.reciteme.com";
+} else if (region === "US") {
+  reciteScriptDomain = "uswestapi.reciteme.com";
+}
+// This sets it into window, in case needed globally
+setInWindow('serviceUrl', reciteScriptDomain, true);
+log('Recite Me Toolbar Loader Ready! Region:', data.region);
+log('Recite Me Toolbar Loader Ready! Region api link:', reciteScriptDomain);
+
 
 const onSuccess = () => {
   //log('Recite Me Toolbar Loader Ready! Client Key:', data.clientKey);
