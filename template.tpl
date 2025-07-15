@@ -46,7 +46,7 @@ ___TEMPLATE_PARAMETERS___
     "help": "Enter any custom options that you are sen into this field, if none have been provided, leave this as the default value."
   },
   {
-    "type": "select",
+    "type": "SELECT",
     "name": "region",
     "displayName": "Region",
     "defaultValue": "UK",
@@ -91,6 +91,11 @@ if (!queryPermission('access_globals', 'readwrite', 'serviceKey')) {
 }
 if (!queryPermission('access_globals', 'readwrite', 'options')) {
   log(tagName + ' failed to load due to insufficient permissions for options.');
+  data.gtmOnFailure();
+  return;
+}
+if (!queryPermission('access_globals', 'readwrite', 'serviceUrl')) {
+  log(tagName + ' failed to load due to insufficient permissions for serviceUrl.');
   data.gtmOnFailure();
   return;
 }
@@ -253,6 +258,45 @@ ___WEB_PERMISSIONS___
                   {
                     "type": 1,
                     "string": "options"
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": true
+                  },
+                  {
+                    "type": 8,
+                    "boolean": false
+                  }
+                ]
+              },
+              {
+                "type": 3,
+                "mapKey": [
+                  {
+                    "type": 1,
+                    "string": "key"
+                  },
+                  {
+                    "type": 1,
+                    "string": "read"
+                  },
+                  {
+                    "type": 1,
+                    "string": "write"
+                  },
+                  {
+                    "type": 1,
+                    "string": "execute"
+                  }
+                ],
+                "mapValue": [
+                  {
+                    "type": 1,
+                    "string": "serviceUrl"
                   },
                   {
                     "type": 8,
