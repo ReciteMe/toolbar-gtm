@@ -111,8 +111,8 @@ if (region === "AU") {
 }
 // This sets it into window, in case needed globally
 setInWindow('serviceUrl', reciteScriptDomain, true);
-log('Recite Me Toolbar Loader Ready! Region:', data.region);
-log('Recite Me Toolbar Loader Ready! Region api link:', reciteScriptDomain);
+//log('Recite Me Toolbar Loader Ready! Region:', data.region);
+//log('Recite Me Toolbar Loader Ready! Region api link:', reciteScriptDomain);
 
 
 const onSuccess = () => {
