@@ -1,6 +1,8 @@
 homepage: "https://reciteme.com"
 documentation: "https://reciteme.com"
 versions:
+  - sha: d721129e3ad92091abfe385ec5d96dbcf7cc70dd
+    changeNotes: Updated the settings to include the region field.
   - sha: 5221e68f10bb0895cb566e8c1f8a30c1e337b211
     changeNotes: Updated title and moved to official github organisation.
   - sha: c3879c6fe44e9470347062fffc4c789426c77e41
